@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_checkfile.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/09 16:31:04 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/09 17:50:28 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/09 18:25:52 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "fillit.h"
 
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <fcntl.h>
-# include "libft.h"
+int		ft_checktetri(char *buf, int ret)
+{
+	int i;
 
-int		ft_error(int fd);
+	i = 0;
+	while (buf[i] == 
 
-#endif
+alors deux souci pour le checker a se souvenir :
+- forcement la verification en . ou en # 
+-mais aussi si chaque tetri vaut bien 21 pour les pre;ier et juste 20 pour le dernier.
+
+idee de revoir mon main pour cree une fonction d'open specialement pour ca
+
