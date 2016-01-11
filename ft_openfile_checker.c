@@ -21,15 +21,14 @@ static void		ft_checker(char *buf, int ret)
 
 	i = 0;
 
-	if (ret != 20 && ret != 21)
+	if (ret != 20 && ret != 21) {
 		ft_error();
+	}
 
 	while (buf[i])
 	{
 		if (buf[i] != '.' && buf[i] != '#' && buf[i] != '\n' && buf[i] != 'a')
 		{
-			ft_putchar(buf[i]);
-			ft_putchar('\n');
 			ft_putstr("nature");
 			ft_error();
 		}
@@ -42,18 +41,16 @@ static void		ft_checker(char *buf, int ret)
 	{
 		if (buf[i] != '\n')
 		{
-			ft_putnbr(j);
-			ft_putchar('\n');
-			ft_putnbr(i);
-			ft_putchar('\n');
 			ft_putstr("forme");
 			ft_error();
-		}
+		}	
 		i = i + 5;
 		j++;
 	}
-	if (buf[ret] != '\n')
+	if (buf[ret] != '\0') {
 		ft_error();
+	}
+	ft_putstr("forme OK\n");
 }
 
 void			ft_openfile_checker(char *str)
@@ -67,6 +64,7 @@ void			ft_openfile_checker(char *str)
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
 		buf[ret] = '\0';
+		ft_putstr(buf);
 		ft_checker(buf, ret);
 	}
 	if (close(fd) == -1)
