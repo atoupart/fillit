@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/09 16:31:04 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/11 14:49:00 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include "libft.h"
 
-int		ft_error(int fd);
+void	ft_error(void);
+void	ft_openfile_checker(char *str);
 
 #endif

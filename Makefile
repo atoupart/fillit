@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/09 18:09:12 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/11 14:39:17 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
 
 FTC = main.c\
-	  ft_error.c
+	  ft_error.c\
+	  ft_openfile_checker.c
 
 FTO = $(FTC:.c=.o)
 
@@ -40,5 +41,7 @@ clean:
 
 fclean: clean
 		@$(RM) $(NAME)
+
+re: fclean all
 
 .PHONY: clean fclean

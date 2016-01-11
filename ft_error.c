@@ -6,15 +6,14 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:43 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/09 16:31:09 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/11 14:48:50 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_error(int fd)
+void	ft_error(void)
 {
-	if (fd <= -1)
-		ft_putstr("error");
-	return (1);
+	ft_putstr("error");
+	exit(EXIT_FAILURE);
 }
