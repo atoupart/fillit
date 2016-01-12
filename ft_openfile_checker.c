@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:07:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/12 18:09:39 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/12 19:01:45 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static void		ft_checktab(char **tab)
 		y++;
 	ft_putchar('D');
 	}
-
 	ft_putchar('c');
 	if (y % 4 != 0 || y == 0)
 		ft_error();
+	}
 }
 
 
@@ -60,6 +60,7 @@ char		**ft_openfile_checker(char *str)
 
 	if ((fd = open(str, O_RDONLY)) == -1)
 		ft_error();
+
 	ret = read(fd, buf, BUF_SIZE);
 	buf[ret] = '\0';
 	tab = ft_splitncheck(buf);
