@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/11 20:02:16 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/12 17:39:01 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,15 +31,15 @@ EXE = libft.a
 all: $(NAME)
 
 $(NAME):
-		$(CC) $(CFLAGS) -c $(FTC)
-		$(CC) $(CFLAGS) $(FTO) -I $(LIB) $(EXE) -o $(NAME)
+		@$(CC) $(CFLAGS) -c $(FTC)
+		@$(CC) $(CFLAGS) $(FTO) -I $(LIB) $(EXE) -o $(NAME)
 
 clean:
-		$(RM) $(FTO)
+		@$(RM) $(FTO)
 
 fclean: clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
 
-re: fclean all clean
+re: fclean all
 
 .PHONY: clean fclean
