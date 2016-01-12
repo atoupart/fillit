@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/12 17:39:01 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/12 20:02:51 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ FTO = $(FTC:.c=.o)
 
 LIB = fillit.h
 
-EXE = libft.a
+EXE = libft/libft.a
 
 all: $(NAME)
 
