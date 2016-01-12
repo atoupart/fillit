@@ -19,7 +19,7 @@ static void		ft_checktab(char **tab)
 
 	x = 0;
 	y = 0;
-	while (tab[y][x])
+	while (**tab[y][x] != NULL)
 	{
 		ft_putchar('B');
 		while (tab[y][x])
@@ -34,13 +34,18 @@ static void		ft_checktab(char **tab)
 			break ;
 		y++;
 	ft_putchar('D');
+		ft_putchar('\n');
+		ft_putnbr(y);
+		ft_putchar('\n');
+		ft_putnbr(x);
+		ft_putchar('\n');
+		// ft_putchar(tab[y][x]);
+		ft_putchar('\n');
 	}
 	ft_putchar('c');
 	if (y % 4 != 0 || y == 0)
 		ft_error();
-	}
 }
-
 
 static char		**ft_splitncheck(char *str)
 {

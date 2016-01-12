@@ -13,6 +13,7 @@
 NAME = fillit
 
 CC=gcc
+GCC=cc
 
 CFLAGS=-Wall -Wextra -Werror
 
@@ -42,4 +43,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean
+lldb:
+	@$(GCC) $(CFLAGS) $(FTC) -o $(NAME) -I $(LIB) $(EXE)
+
+.PHONY: clean fclean lldb
