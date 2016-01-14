@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:13:24 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/12 17:37:42 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/14 20:11:28 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 int		main(int argc, char **argv)
 {
 	char **tab;
+	t_tool data;
 
 	if (argc == 2)
-		tab = ft_openfile_checker(argv[1]);
+		tab = ft_openfile_checker(argv[1], &data);
 	else
 		ft_error();
 	return (0);

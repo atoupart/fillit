@@ -6,44 +6,41 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:07:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/12 20:48:56 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/14 20:13:12 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static void		ft_checktab(char **tab)
+static void		ft_checktab(char **tab, t_tool *data)
 {
-	int y;
-	int x;
-
-	x = 0;
-	y = 0;
-	while (tab[y])
+	X = 0;
+	Y = 0;
+	while (tab[Y])
 	{
-		while (tab[y][x])
+		while (tab[Y][X])
 		{
-			if (tab[y][x] != '.' && tab[y][x] != '#')
+			if (tab[Y][X] != '.' && tab[Y][X] != '#')
 				ft_error();
-			x++;
+			X++;
 		}
-		y++;
-		x = 0;
+		Y++;
+		X = 0;
 	}
-	if (y % 4 != 0 || y == 0)
+	if (Y % 4 != 0 || Y == 0)
 		ft_error();
 }
 
-static char		**ft_splitncheck(char *str)
+static char		**ft_splitncheck(char *str, t_tool *data)
 {
 	char **tab;
 
 	tab = ft_strsplit(str, '\n');
-	ft_checktab(tab);
+	ft_checktab(tab, data);
 	return (tab);
 }
 
-char		**ft_openfile_checker(char *str)
+char		**ft_openfile_checker(char *str, t_tool *data)
 {
 	int fd;
 	int ret;
@@ -54,7 +51,7 @@ char		**ft_openfile_checker(char *str)
 		ft_error();
 	ret = read(fd, buf, BUF_SIZE);
 	buf[ret] = '\0';
-	tab = ft_splitncheck(buf);
+	tab = ft_splitncheck(buf, data);
 	if (close(fd) == -1)
 		ft_error();
 	return (tab);

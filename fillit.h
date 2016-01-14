@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/12 17:42:08 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/14 20:10:54 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,18 @@
 # include "libft.h"
 
 # define BUF_SIZE 545
+# define X data->x
+# define Y data->y
+# define I data->i
+
+typedef struct		s_tool
+{
+	int				x;
+	int				y;
+	int				i;
+}					t_tool;
 
 void	ft_error(void);
-char	**ft_openfile_checker(char *str);
+char	**ft_openfile_checker(char *str, t_tool *data);
 
 #endif
