@@ -21,19 +21,26 @@ RM=rm -f
 
 FTC = main.c\
 	  ft_error.c\
-	  ft_openfile_checker.c
+	  ft_openfile_checker.c\
+	  print_string_tab.c
 
 FTO = $(FTC:.c=.o)
 
-LIB = fillit.h
+INC	= -I includes -I libft/includes
+
+LIB = -L libft -lft
 
 EXE = libft/libft.a
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): make_libft
 		@$(CC) $(CFLAGS) -c $(FTC)
-		@$(CC) $(CFLAGS) $(FTO) -I $(LIB) $(EXE) -o $(NAME)
+		@$(CC) $(CFLAGS) $(FTO) -o $(NAME) $(INC) $(LIB)
+
+make_libft:
+	@echo "Compilation de la libft :"
+	@make -C libft
 
 clean:
 		@$(RM) $(FTO)
@@ -44,6 +51,6 @@ fclean: clean
 re: fclean all
 
 lldb:
-	@$(GCC) $(CFLAGS) $(FTC) -o $(NAME) -I $(LIB) $(EXE)
+	@$(GCC) $(CFLAGS) $(FTC) -o $(NAME) $(INC) $(LIB)
 
 .PHONY: clean fclean lldb

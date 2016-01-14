@@ -52,6 +52,7 @@ char		**ft_openfile_checker(char *str, t_tool *data)
 	ret = read(fd, buf, BUF_SIZE);
 	buf[ret] = '\0';
 	tab = ft_splitncheck(buf, data);
+	print_string_tab(tab);
 	if (close(fd) == -1)
 		ft_error();
 	return (tab);

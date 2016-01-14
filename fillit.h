@@ -30,7 +30,16 @@ typedef struct		s_tool
 	int				i;
 }					t_tool;
 
-void	ft_error(void);
-char	**ft_openfile_checker(char *str, t_tool *data);
+void			ft_error(void);
+
+/*
+** ft_splitncheck.c
+*/
+char			**ft_openfile_checker(char *str, t_tool *data);
+
+/*
+** print_string_tab.c
+*/
+void			print_string_tab(char **tab);
 
 #endif
