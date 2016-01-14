@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:07:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/14 20:13:12 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/14 21:39:22 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,25 @@ static void		ft_checktab(char **tab, t_tool *data)
 {
 	X = 0;
 	Y = 0;
+	I = 0;
 	while (tab[Y])
 	{
 		while (tab[Y][X])
 		{
 			if (tab[Y][X] != '.' && tab[Y][X] != '#')
 				ft_error();
+			if (tab[Y][X] == '#')
+				I++;
 			X++;
 		}
 		Y++;
+			if (Y % 4 == 0 && Y != 0)
+			{
+				if (I != 4)
+					ft_error();
+				else
+					I = 0;
+			}
 		X = 0;
 	}
 	if (Y % 4 != 0 || Y == 0)
@@ -52,7 +62,6 @@ char		**ft_openfile_checker(char *str, t_tool *data)
 	ret = read(fd, buf, BUF_SIZE);
 	buf[ret] = '\0';
 	tab = ft_splitncheck(buf, data);
-	print_string_tab(tab);
 	if (close(fd) == -1)
 		ft_error();
 	return (tab);
