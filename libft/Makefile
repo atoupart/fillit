@@ -10,15 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME	= libft.a
 
-CC=gcc
+CC		= gcc
+RM		= /bin/rm -rf
 
-CFLAGS=-Wall -Wextra -Werror
-
-RM=rm -f
-
-FTC = ft_atoi.c\
+SRCS	= ft_atoi.c\
 		ft_bzero.c\
 		ft_isalnum.c\
 		ft_isalpha.c\
@@ -78,21 +75,31 @@ FTC = ft_atoi.c\
 		ft_lstiter.c\
 		ft_lstmap.c
 
-FTO = $(FTC:.c=.o)
+CFLAGS	= -Wall -Wextra -Werror
 
-$(NAME):
-		@$(CC) $(CFLAGS) -c $(FTC)
-		@ar rc $(NAME) $(FTO)
-		@ranlib $(NAME)
+INC		= ./
+OBJ		= ${SRCS:%.c=.obj/%.o}
+FTO		= $(FTC:.c=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJ)
+		@echo ""
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
+		@echo "création de $(NAME)"
+
+.obj/%.o: %.c
+	@mkdir -p .obj
+	@$(CC) -c $< -o $@ $(CFLAGS) -I $(INC)
+	@printf .
+
 clean:
-		@$(RM) $(FTO)
+		@$(RM) .obj
 
 fclean: clean
 		@$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean
+.PHONY: all clean fclean re

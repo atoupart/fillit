@@ -13,33 +13,27 @@
 NAME	= fillit
 
 CC		= gcc
-LLDB	= cc
+RM		= /bin/rm -rf
 
 CFLAGS	= -Wall -Wextra -Werror
 
-RM		= /bin/rm -f
+FILES	= main.c\
+		ft_error.c\
+		ft_openfile_checker.c\
+		print_string_tab.c
+SRC		= $(addprefix srcs/, $(FILES))
+OBJ		= $(SRC:srcs/%.c=.obj/%.o)
 
-FTC		= main.c\
-	  ft_error.c\
-	  ft_openfile_checker.c\
-	  print_string_tab.c
-
-FTO		= $(FTC:.c=.o)
-
-INC		= -I includes -I libft/includes
-
+INC		= -I . -I libft
 LIB		= -L libft -lft
-
-EXE		= libft/libft.a
 
 all: $(NAME)
 
-$(NAME): make_libft $(FTO)
-	@$(CC) $(CFLAGS) -c $(FTC)
-	@$(CC) $(CFLAGS) $(FTO) -o $(NAME) $(INC) $(LIB)
+$(NAME): make_libft $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIB)
 
 .obj/%.o: srcs/%.c
-	# @mkdir -p .obj
+	@mkdir -p .obj
 	$(CC) -c $< -o $@ $(FLAGS) $(INC)
 
 make_libft:
@@ -47,7 +41,7 @@ make_libft:
 	@make -C libft
 
 clean:
-	@$(RM) $(FTO)
+	@$(RM) .obj
 
 fclean: clean
 	@$(RM) $(NAME)
@@ -55,6 +49,6 @@ fclean: clean
 re: fclean all
 
 lldb:
-	@$(LLDB) $(CFLAGS) $(FTC) -o $(NAME) $(INC) $(LIB)
+	cc $(CFLAGS) $(SRC) -o $(NAME) $(INC) $(LIB)
 
-.PHONY: clean fclean lldb
+.PHONY: all clean fclean re lldb
