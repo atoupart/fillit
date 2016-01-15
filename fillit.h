@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/14 20:10:54 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/15 12:20:52 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <fcntl.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 # define BUF_SIZE 545
 # define X data->x
@@ -32,14 +32,12 @@ typedef struct		s_tool
 
 void			ft_error(void);
 
-/*
-** ft_splitncheck.c
-*/
 char			**ft_openfile_checker(char *str, t_tool *data);
 
-/*
-** print_string_tab.c
-*/
+void			ft_checktab(char **tab, t_tool *data);
+
+char			**ft_splitncheck(char *str, t_tool *data);
+
 void			print_string_tab(char **tab);
 
 #endif
