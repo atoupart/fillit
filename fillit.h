@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/15 12:20:52 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/18 14:52:32 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void			ft_error(void);
 
 char			**ft_openfile_checker(char *str, t_tool *data);
 
-void			ft_checktab(char **tab, t_tool *data);
+void			ft_checkform(char *buf, int ret, t_tool *data);
 
-char			**ft_splitncheck(char *str, t_tool *data);
+void			ft_checktab(char **tab, t_tool *data);
 
 void			print_string_tab(char **tab);
 

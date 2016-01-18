@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/15 12:35:29 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/18 13:35:20 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS	= -Wall -Wextra -Werror
 FILES	= main.c\
 		ft_error.c\
 		ft_openfile_checker.c\
-		ft_splitncheck.c\
+		ft_checkform.c\
 		ft_checktab.c\
 		print_string_tab.c
 SRC		= $(addprefix srcs/, $(FILES))
