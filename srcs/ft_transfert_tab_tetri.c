@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkform.c                                     :+:      :+:    :+:   */
+/*   ft_transfert_tab_tetri.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/18 12:21:10 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/19 16:53:22 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/19 16:52:04 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/19 19:34:00 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		ft_checkform(char *buf, int ret, t_tool *data)
+void		ft_transfert_tab_tetri(char **tab, t_tool *data)
 {
-	X = 4;
-	I = 0;
-	NBTETRI = 0;
-	if (buf[ret - 2] != '.' && buf[ret - 2] != '#')
+	I = -1;
+	X = -1;
+	Y = -1;
+	if (!(TABTETRI = (char***)ft_memalloc(sizeof(char**) * NBTETRI)))
 		ft_error();
-	while (buf[X])
+	while (++I < NBTETRI)
 	{
-		if (buf[X] != '\n')
+		if (!(TABTETRI[I] = (char**)ft_memalloc(sizeof(char*) * 5)))
 			ft_error();
-		if (I == 3)
+		while (++Y < 4)
 		{
-			NBTETRI++;
-			if (buf[X + 1] != '\n' && buf[X + 1] != '\0')
+			if(!(TABTETRI[I][Y] = (char*)ft_memalloc(sizeof(char) * 5)))
 				ft_error();
-			X++;
-			I = -1;
+			while (++X < 4)
+				TABTETRI[I][Y][X] = tab[Y][X];
+			X = -1;
 		}
-		else if (buf[X + 1] != '\0')
-		{
-			X += 5;
-			I++;
-		}
+		Y = -1;
 	}
-	if (NBTETRI > 26 || NBTETRI <= 0)
-		ft_error();
 }

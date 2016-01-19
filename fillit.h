@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/18 14:52:32 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/19 18:09:06 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,30 @@
 # define X data->x
 # define Y data->y
 # define I data->i
+# define NBTETRI data->nbtetri
+# define TABTETRI data->tabtetri
 
 typedef struct		s_tool
 {
 	int				x;
 	int				y;
 	int				i;
+	int				nbtetri;
+	char			***tabtetri;
 }					t_tool;
 
 void			ft_error(void);
 
-char			**ft_openfile_checker(char *str, t_tool *data);
+void			ft_openfile_checker(char *str, t_tool *data);
 
 void			ft_checkform(char *buf, int ret, t_tool *data);
 
 void			ft_checktab(char **tab, t_tool *data);
 
+void			ft_transfert_tab_tetri(char **tab, t_tool *data);
+
 void			print_string_tab(char **tab);
+
+void			printtab(t_tool *data);
 
 #endif

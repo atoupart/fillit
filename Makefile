@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/18 13:35:20 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/19 18:07:24 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ FILES	= main.c\
 		ft_openfile_checker.c\
 		ft_checkform.c\
 		ft_checktab.c\
-		print_string_tab.c
+		ft_transfert_tab_tetri.c\
+		print_string_tab.c\
+		printtab.c
 SRC		= $(addprefix srcs/, $(FILES))
 OBJ		= $(SRC:srcs/%.c=.obj/%.o)
 
