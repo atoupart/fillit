@@ -14,7 +14,7 @@
 
 int		main(int argc, char **argv)
 {
-	t_tool *data;
+	t_tool	*data;
 
 	data = (t_tool*)malloc(sizeof(t_tool));
 	if (argc == 2)
