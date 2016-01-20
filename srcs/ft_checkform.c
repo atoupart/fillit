@@ -11,67 +11,38 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
+/* ************************************************************************** *
+ * Check le fichier :
+ * - type de charactère correcte
+ * - il s'agit bien d'emplacements pour pieces de 4 x 4
+ * - initialise NBTETRI au nombre de tetrinimos
+ * ************************************************************************** */
 void		ft_checkform(char *buf, int ret, t_tool *data)
 {
 	X = 4;
-	I = 0;
+	I = 1;
 	NBTETRI = 0;
 	if (!(buf[ret - 2] == '.' || buf[ret - 2] == '#') || buf[ret - 1] != '\n')
 		ft_error();
 	X = -1;
 	while (buf[++X])
 	{
-		ft_putchar(buf[X]);
-		// ft_putnbr(NBTETRI + X);
-		// ft_putchar('\n');
-		if (((X + 1 - NBTETRI) % 5) == 0 && buf[X] == '\n') {
-			I++;
-		}
-
-		if ((X - NBTETRI) != 0 && ((X - NBTETRI) % 20) == 0) {
-			NBTETRI++;
-			printf("\nnouveau tetri : X(%d) buf[X](%c) I(%d) NBTETRI(%d)\n", X, buf[X], I, NBTETRI);
+		if (X == 0 && (buf[X] == '#' || buf[X] == '.')) {
 			continue ;
-		}
-
-		if (((X + 1 - NBTETRI) % 5) && buf[X] != '.' && buf[X] != '#') {
-			printf("\nerreur2 : X(%d) buf[X](%c) I(%d) NBTETRI(%d)\n", X, buf[X], I, NBTETRI);
+		} else if (((X - NBTETRI) % 20) == 0) {
+			if (buf[X] != '\n' && I == 1)
+				ft_error();
+			if (I == 1)
+				NBTETRI++;
+			I = -I;
+		} else if ((X + 1 - NBTETRI) % 5 == 0) {
+			if (buf[X] != '\n')
+				ft_error();
+		} else if (buf[X] != '#' && buf[X] != '.')
 			ft_error();
-		}
-
-		if (X != 0 && ((X + 1 - NBTETRI) % 5) == 0 && buf[X] != '\n') {
-			printf("\nerreur1 : X(%d) buf[X](%c) I(%d) NBTETRI(%d)\n", X, buf[X], I, NBTETRI);
-			ft_error();	
-		}
-
-		
-		// if (I != 0 && I % 5 == 0) {
-		// 	ft_putstr("\nNBTETRI ++\n");
-		// 	NBTETRI++;
-		// }
-
 	}
-	ft_putnbr(NBTETRI);
-	// while (buf[X])
-	// {
-	// 	if (buf[X] != '\n')
-	// 		ft_error();
-	// 	if (I == 3)
-	// 	{
-	// 		NBTETRI++;
-	// 		if (buf[X + 1] != '\n' && buf[X + 1] != '\0')
-	// 			ft_error();
-	// 		X++;
-	// 		I = -1;
-	// 	}
-	// 	else if (buf[X + 1] != '\0')
-	// 	{
-	// 		X += 5;
-	// 		I++;
-	// 	}
-	// }
+	NBTETRI++;
 	if (NBTETRI > 26 || NBTETRI <= 0)
 		ft_error();
 }

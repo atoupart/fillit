@@ -23,11 +23,11 @@ void		ft_openfile_checker(char *str, t_tool *data)
 		ft_error();
 	if ((ret = read(fd, buf, BUF_SIZE)) == BUF_SIZE)
 		ft_error();
+	if (close(fd) == -1)
+		ft_error();
 	buf[ret] = '\0';
 	ft_checkform(buf, ret, data);
 	tab = ft_strsplit(buf, '\n');
 	ft_checktab(tab, data);
 	ft_transfert_tab_tetri(tab, data);
-	if (close(fd) == -1)
-		ft_error();
 }
