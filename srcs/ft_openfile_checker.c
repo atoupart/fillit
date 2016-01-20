@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/15 11:55:04 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/19 18:10:35 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:01:58 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void		ft_openfile_checker(char *str, t_tool *data)
 	tab = ft_strsplit(buf, '\n');
 	ft_checktab(tab, data);
 	ft_transfert_tab_tetri(tab, data);
+	ft_checktetri(data);
 }

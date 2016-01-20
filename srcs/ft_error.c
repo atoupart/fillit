@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:43 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/11 14:48:50 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:06:59 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	ft_error(void)
 {
 	ft_putstr("error");
+	ft_putchar('\n');
 	exit(EXIT_FAILURE);
 }

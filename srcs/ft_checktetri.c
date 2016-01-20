@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_transfert_tab_tetri.c                           :+:      :+:    :+:   */
+/*   ft_checktetri.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/19 16:52:04 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/20 17:17:10 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/20 17:20:57 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/20 18:49:03 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		ft_transfert_tab_tetri(char **tab, t_tool *data)
+void		ft_checktetri(t_tool *data)
 {
 	I = -1;
-	X = -1;
-	Y = -1;
-	if (!(TABTETRI = (char***)ft_memalloc(sizeof(char**) * NBTETRI)))
-		ft_error();
 	while (++I < NBTETRI)
 	{
-		if (!(TABTETRI[I] = (char**)ft_memalloc(sizeof(char*) * 5)))
-			ft_error();
+		Y = -1;
 		while (++Y < 4)
 		{
-			if (!(TABTETRI[I][Y] = (char*)ft_memalloc(sizeof(char) * 5)))
-				ft_error();
-			while (++X < 4)
-					TABTETRI[I][Y][X] = tab[Y][X];
 			X = -1;
+			while (++X < 4)
+			{
+				if (TABTETRI[I][Y][X] == '#')
+				{
+					if (!(TABTETRI[I][Y][X + 1] == '#' || \
+						TABTETRI[I][Y][X - 1] == '#' || \
+						TABTETRI[I][Y + 1][X] == '#' || \
+						TABTETRI[I][Y - 1][X] == '#'))
+					{
+						ft_putstr("prout");
+						ft_putnbr(I);
+						ft_putnbr(Y);
+						ft_putnbr(X);
+						ft_error();
+					}
+				}
+			}
 		}
-		Y = -1;
 	}
 }
+

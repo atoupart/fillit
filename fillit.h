@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/19 18:09:06 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/20 17:55:08 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void			ft_checkform(char *buf, int ret, t_tool *data);
 void			ft_checktab(char **tab, t_tool *data);
 
 void			ft_transfert_tab_tetri(char **tab, t_tool *data);
+
+void			ft_checktetri(t_tool *data);
 
 void			print_string_tab(char **tab);
 
