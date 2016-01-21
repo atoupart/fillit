@@ -6,14 +6,24 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 17:20:57 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/20 18:49:03 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/21 19:33:57 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ **
+ * Verifie si chaque ' # ' en touche bien un autre.*
+ * Si tel est le cas, c'est donc forcement bien un tetriminos.*
+ **
+*/
+
 #include "fillit.h"
+
 
 void		ft_checktetri(t_tool *data)
 {
+	pts("prout");
+	ptcn;
 	I = -1;
 	while (++I < NBTETRI)
 	{
@@ -30,10 +40,7 @@ void		ft_checktetri(t_tool *data)
 						TABTETRI[I][Y + 1][X] == '#' || \
 						TABTETRI[I][Y - 1][X] == '#'))
 					{
-						ft_putstr("prout");
-						ft_putnbr(I);
-						ft_putnbr(Y);
-						ft_putnbr(X);
+						ft_putstr("formtetri");
 						ft_error();
 					}
 				}
@@ -41,4 +48,3 @@ void		ft_checktetri(t_tool *data)
 		}
 	}
 }
-

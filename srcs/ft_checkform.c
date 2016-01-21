@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 12:21:10 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/20 16:34:39 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/21 16:57:18 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void		ft_checkform(char *buf, int ret, t_tool *data)
 	I = 1;
 	NBTETRI = 0;
 	if (!(buf[ret - 2] == '.' || buf[ret - 2] == '#') || buf[ret - 1] != '\n')
+	{
+		ft_putstr("endline");
 		ft_error();
+	}
 	while (buf[++X])
 	{
 		if (X == 0 && (buf[X] == '#' || buf[X] == '.'))
@@ -32,7 +35,10 @@ void		ft_checkform(char *buf, int ret, t_tool *data)
 		else if (((X - NBTETRI) % 20) == 0)
 		{
 			if (buf[X] != '\n' && I == 1)
+			{
+				ft_putstr("backline");
 				ft_error();
+			}
 			if (I == 1)
 				NBTETRI++;
 			I = -I;
@@ -40,12 +46,21 @@ void		ft_checkform(char *buf, int ret, t_tool *data)
 		else if ((X + 1 - NBTETRI) % 5 == 0)
 		{
 			if (buf[X] != '\n')
+			{
+				ft_putstr("betweenline");
 				ft_error();
+			}
 		}
 		else if (buf[X] != '#' && buf[X] != '.')
+		{
+			ft_putstr("diesedot");
 			ft_error();
+		}
 	}
 	NBTETRI++;
 	if (NBTETRI > 26 || NBTETRI <= 0)
+	{
+		ft_putstr("NBTETRI");
 		ft_error();
+	}
 }

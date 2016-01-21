@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/20 17:55:08 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/21 18:50:28 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,22 @@
 # define X data->x
 # define Y data->y
 # define I data->i
+# define L data->l
 # define NBTETRI data->nbtetri
 # define TABTETRI data->tabtetri
+
+# define pts ft_putstr
+# define ptn ft_putnbr
+# define ptc ft_putchar
+# define ptcn ft_putchar('\n');
+
 
 typedef struct		s_tool
 {
 	int				x;
 	int				y;
 	int				i;
+	int				l;
 	int				nbtetri;
 	char			***tabtetri;
 }					t_tool;

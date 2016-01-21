@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/20 17:54:33 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/21 18:03:49 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ LIB		= -L libft -lft
 all: $(NAME)
 
 $(NAME): make_libft $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIB)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIB)
 
 .obj/%.o: srcs/%.c
 	@mkdir -p .obj
@@ -54,6 +54,6 @@ fclean: clean
 re: fclean all
 
 lldb:
-	cc $(CFLAGS) $(SRC) -o $(NAME) $(INC) $(LIB)
+	@cc $(CFLAGS) $(SRC) -o $(NAME) $(INC) $(LIB)
 
 .PHONY: all clean fclean re lldb
