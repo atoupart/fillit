@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/21 18:50:28 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/22 15:16:21 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 # define X data->x
 # define Y data->y
 # define I data->i
-# define L data->l
+# define K data->k
+# define J data->j
 # define NBTETRI data->nbtetri
 # define TABTETRI data->tabtetri
 
@@ -37,7 +38,8 @@ typedef struct		s_tool
 	int				x;
 	int				y;
 	int				i;
-	int				l;
+	int				k;
+	int				j;
 	int				nbtetri;
 	char			***tabtetri;
 }					t_tool;
@@ -54,8 +56,8 @@ void			ft_transfert_tab_tetri(char **tab, t_tool *data);
 
 void			ft_checktetri(t_tool *data);
 
-void			print_string_tab(char **tab);
+void			printtab2(char **tab);
 
-void			printtab(t_tool *data);
+void			printtab3(t_tool *data);
 
 #endif
