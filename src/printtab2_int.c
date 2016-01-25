@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   printtab2_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 17:13:24 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/21 19:11:50 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 17:06:27 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 17:09:06 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+void		printtab2_int(int *tab)
 {
-	t_tool	*data;
+	int i;
 
-	data = (t_tool*)malloc(sizeof(t_tool));
-	if (argc == 2)
+	i = -1;
+	while (tab[++i])
 	{
-		ft_openfile_checker(argv[1], data);
-//		printtab(data);
+		ptn(tab[i]);
+		ptcn;
 	}
-	else
-	{
-		ft_putstr("argument");
-		ft_error();
-	}
-	return (0);
 }

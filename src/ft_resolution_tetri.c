@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_resolution_tetri.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 17:13:24 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/25 17:35:04 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 13:03:54 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 15:33:22 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+void		ft_resolution_tetri(t_tool *data)
 {
-	t_tool	*data;
-
-	if (!(data = (t_tool*)ft_memalloc(sizeof(t_tool))))
-	{
-		pts("malloc0");
-		ft_error();
-	}
-	if (argc != 2)
-	{
-		ft_putstr("argument");
-		ft_error();
-	}
-	ft_openfile_checker(argv[1], data);
-	ft_resolution_tetri(data);
-	printtab3(data);
-	printtab2_int(TABFORM);
-	return (0);
+	ft_launcher_capte_tetri(data);
 }

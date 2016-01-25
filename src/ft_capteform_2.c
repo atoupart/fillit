@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checktab.c                                      :+:      :+:    :+:   */
+/*   ft_capteform_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/12 16:07:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/21 19:31:41 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 15:38:32 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 18:33:35 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		ft_checktab(char **tab, t_tool *data)
+int			ft_capteform_2(char **tab, t_tool *data)
 {
 	Y = -1;
-	I = 0;
-	while (tab[++Y])
+	while (++Y < 4)
 	{
 		X = -1;
-		while (tab[Y][++X])
+		while (++X < 4)
 			if (tab[Y][X] == '#')
-				I++;
-		if ((Y + 1) % 4 == 0)
-		{
-			if (I != 4)
-			{
-				ft_putstr("NBdiese");
-				ft_error();
-			}
-			else
-				I = 0;
-		}
+				if (tab[Y][X + 1] == '#')
+					if (tab[Y][X + 2] == '#')
+						if (tab[Y][X + 3] == '#')
+							return (2);
 	}
-	if (Y % 4 != 0 || Y == 0)
-	{
-		ft_putstr("NBline");
-		ft_error();
-	}
+	return (0);
 }

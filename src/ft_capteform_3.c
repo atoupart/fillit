@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printtab.c                                         :+:      :+:    :+:   */
+/*   ft_capteform_3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/19 17:55:55 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/21 16:31:40 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 15:38:32 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 18:57:22 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		printtab(t_tool *data)
+int			ft_capteform_3(char **tab, t_tool *data)
 {
-	I = -1;
-	while (++I < NBTETRI)
+	Y = -1;
+	while (++Y < 4)
 	{
-		Y = -1;
-		while (++Y < 4)
-		{
-			X = -1;
-			while (++X < 4)
-				ft_putchar(TABTETRI[I][Y][X]);
-			ft_putchar('\n');
-		}
-		ft_putchar('\n');
+		X = -1;
+		while (++X < 4)
+			if (tab[Y][X] == '#')
+				if (tab[Y + 1][X] == '#')
+					if (tab[Y][X + 1] == '#')
+						if (tab[Y + 1][X + 1] == '#')
+							return (3);
 	}
+	return (0);
 }

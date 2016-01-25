@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_capteform_6.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 17:13:24 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/25 17:35:04 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 15:38:32 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 18:34:16 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int argc, char **argv)
+int			ft_capteform_6(char **tab, t_tool *data)
 {
-	t_tool	*data;
-
-	if (!(data = (t_tool*)ft_memalloc(sizeof(t_tool))))
+	Y = -1;
+	while (++Y < 4)
 	{
-		pts("malloc0");
-		ft_error();
+		X = -1;
+		while (++X < 4)
+			if (tab[Y][X] == '#')
+				if (tab[Y + 1][X] == '#')
+					if (tab[Y + 1][X + 1] == '#')
+						if (tab[Y + 2][X + 1] == '#')
+							return (6);
 	}
-	if (argc != 2)
-	{
-		ft_putstr("argument");
-		ft_error();
-	}
-	ft_openfile_checker(argv[1], data);
-	ft_resolution_tetri(data);
-	printtab3(data);
-	printtab2_int(TABFORM);
 	return (0);
 }

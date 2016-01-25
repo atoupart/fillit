@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_string_tab.c                                 :+:      :+:    :+:   */
+/*   ft_capteform_12.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/31 21:05:57 by ebaudet           #+#    #+#             */
-/*   Updated: 2016/01/15 11:24:12 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 15:38:32 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 18:35:23 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	print_string_tab(char **tab)
+int			ft_capteform_12(char **tab, t_tool *data)
 {
-	int		x;
-	int		y;
-
-	x = -1;
-	while (tab[++x] != NULL)
+	Y = -1;
+	while (++Y < 4)
 	{
-		y = -1;
-		while (tab[x][++y] != '\0')
-		{
-			ft_putchar(tab[x][y]);
-			ft_putchar(' ');
-		}
-		ft_putchar('\n');
+		X = -1;
+		while (++X < 4)
+			if (tab[Y][X] == '#')
+				if (tab[Y + 1][X] == '#')
+					if (tab[Y + 2][X] == '#')
+						if (tab[Y + 2][X + 1] == '#')
+							return (12);
 	}
+	return (0);
 }

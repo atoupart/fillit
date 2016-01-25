@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_capteform_9.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/09 16:15:43 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/20 18:06:59 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/25 15:38:32 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/25 18:34:53 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_error(void)
+int			ft_capteform_9(char **tab, t_tool *data)
 {
-	ft_putstr("error");
-	ft_putchar('\n');
-	exit(EXIT_FAILURE);
+	Y = -1;
+	while (++Y < 4)
+	{
+		X = -1;
+		while (++X < 4)
+			if (tab[Y][X] == '#')
+				if (tab[Y][X + 1] == '#')
+					if (tab[Y + 1][X + 1] == '#')
+						if (tab[Y][X + 2] == '#')
+							return (9);
+	}
+	return (0);
 }
