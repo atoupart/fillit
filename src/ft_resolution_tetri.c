@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 13:03:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/26 14:24:38 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/26 15:27:50 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,5 @@ void		ft_resolution_tetri(t_tool *data)
 	ft_search_Y_MAX(data);
 	ft_search_X_MIN(data);
 	ft_search_X_MAX(data);
-	I = -1;
-	while (++I < NBTETRI)
-	{
-		pts("_____________________");
-		ptcn;
-		pts("Y_MIN : ");
-		ptn(Y_MIN[I]);
-		ptcn;
-		pts("Y_MAX : ");
-		ptn(Y_MAX[I]);
-		ptcn;
-		pts("X_MIN : ");
-		ptn(X_MIN[I]);
-		ptcn;
-		pts("X_MAX : ");
-		ptn(X_MAX[I]);
-		ptcn;
-	}
+	ft_reduce_tetri(data);
 }

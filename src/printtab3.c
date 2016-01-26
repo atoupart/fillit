@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 17:55:55 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/22 15:43:24 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/26 17:19:30 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,20 @@
 
 void		printtab3(t_tool *data)
 {
+	pts("Visualisation de TABTETRI");
+	ptcn;
 	I = -1;
 	while (++I < NBTETRI)
 	{
 		printtab2(TABTETRI[I]);
+		ptcn;
+	}
+	pts("Visualisation de TAB");
+	ptcn;
+	I = -1;
+	while (++I < NBTETRI)
+	{
+		printtab2(TAB[I]);
 		ptcn;
 	}
 }

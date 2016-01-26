@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/26 13:37:03 by atoupart         ###   ########.fr        #
+#    Updated: 2016/01/26 15:30:30 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ FILES	= main.c\
 		ft_search_Y_MAX.c\
 		ft_search_X_MIN.c\
 		ft_search_X_MAX.c\
+		ft_reduce_tetri.c\
 		printtab2.c\
 		printtab3.c
 SRC		= $(addprefix src/, $(FILES))

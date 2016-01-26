@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/26 13:36:38 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/26 16:45:49 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define Y_MAX data->y_max
 # define X_MIN data->x_min
 # define Y_MIN data->y_min
+# define TAB data->tab
 
 # define pts ft_putstr
 # define ptn ft_putnbr
@@ -50,6 +51,7 @@ typedef struct		s_tool
 	int				j;
 	int				nbtetri;
 	char			***tabtetri;
+	char			***tab;
 }					t_tool;
 
 void			ft_error(void);
@@ -73,6 +75,8 @@ void			ft_search_Y_MAX(t_tool *data);
 void			ft_search_X_MIN(t_tool *data);
 
 void			ft_search_X_MAX(t_tool *data);
+
+void			ft_reduce_tetri(t_tool *data);
 
 /*
 * a supprimer quant le programme sera completement operationnel.
