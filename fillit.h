@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/25 17:09:39 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/26 13:36:38 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@
 # define J data->j
 # define NBTETRI data->nbtetri
 # define TABTETRI data->tabtetri
-# define TABFORM data->tabform
+# define X_MAX data->x_max
+# define Y_MAX data->y_max
+# define X_MIN data->x_min
+# define Y_MIN data->y_min
 
 # define pts ft_putstr
 # define ptn ft_putnbr
@@ -36,7 +39,10 @@
 
 typedef struct		s_tool
 {
-	int				*tabform;
+	int				*x_max;
+	int				*y_max;
+	int				*x_min;
+	int				*y_min;
 	int				x;
 	int				y;
 	int				i;
@@ -60,33 +66,18 @@ void			ft_checktetri(t_tool *data);
 
 void			ft_resolution_tetri(t_tool *data);
 
-void			ft_launcher_capte_tetri(t_tool *data);
+void			ft_search_Y_MIN(t_tool *data);
 
+void			ft_search_Y_MAX(t_tool *data);
 
-int				ft_capteform_1(char **tab, t_tool *data);
-int				ft_capteform_2(char **tab, t_tool *data);
-int				ft_capteform_3(char **tab, t_tool *data);
-int				ft_capteform_4(char **tab, t_tool *data);
-int				ft_capteform_5(char **tab, t_tool *data);
-int				ft_capteform_6(char **tab, t_tool *data);
-int				ft_capteform_7(char **tab, t_tool *data);
-int				ft_capteform_8(char **tab, t_tool *data);
-int				ft_capteform_9(char **tab, t_tool *data);
-int				ft_capteform_10(char **tab, t_tool *data);
-int				ft_capteform_11(char **tab, t_tool *data);
-int				ft_capteform_12(char **tab, t_tool *data);
-int				ft_capteform_13(char **tab, t_tool *data);
-int				ft_capteform_14(char **tab, t_tool *data);
-int				ft_capteform_15(char **tab, t_tool *data);
-int				ft_capteform_16(char **tab, t_tool *data);
-int				ft_capteform_17(char **tab, t_tool *data);
-int				ft_capteform_18(char **tab, t_tool *data);
-int				ft_capteform_19(char **tab, t_tool *data);
+void			ft_search_X_MIN(t_tool *data);
+
+void			ft_search_X_MAX(t_tool *data);
+
 /*
 * a supprimer quant le programme sera completement operationnel.
 */
 void			printtab2(char **tab);
 void			printtab3(t_tool *data);
-void			printtab2_int(int *tab);
 
 #endif
