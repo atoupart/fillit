@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/19 16:52:04 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/22 15:40:38 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/27 16:56:39 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		ft_transfert_tab_tetri(char **tab, t_tool *data)
 {
 	I = -1;
 	K = -1;
-	if (!(TABTETRI = (char***)ft_memalloc(sizeof(char**) * NBTETRI)))
+	if (!(TABTETRI = (char***)ft_memalloc(sizeof(char**) * NBTETRI + 1)))
 	{
 		ft_putstr("malloc1");
 		ft_error();
