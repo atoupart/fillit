@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 12:53:43 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/22 16:03:52 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/28 10:25:04 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void		ft_checktetri(t_tool *data)
 				}
 			}
 		}
-	}
 		if (K < 6)
 		{
 			pts("formtetri");
 			ft_error();
 		}
+	}
 }
