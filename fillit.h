@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/27 16:35:11 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/28 17:53:11 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define X_MIN data->x_min
 # define Y_MIN data->y_min
 # define TAB data->tab
+# define L_SQUARE data->l_square
 
 # define pts ft_putstr
 # define ptn ft_putnbr
@@ -52,6 +53,7 @@ typedef struct		s_tool
 	int				nbtetri;
 	char			***tabtetri;
 	char			***tab;
+	int				l_square;
 }					t_tool;
 
 void			ft_error(void);
