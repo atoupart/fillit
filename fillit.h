@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/28 17:53:11 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/29 17:55:42 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@
 # define X_MIN data->x_min
 # define Y_MIN data->y_min
 # define TAB data->tab
-# define L_SQUARE data->l_square
+# define FINALTAB data->finaltab
+# define SQUARE data->square
 
 # define pts ft_putstr
 # define ptn ft_putnbr
@@ -53,7 +54,8 @@ typedef struct		s_tool
 	int				nbtetri;
 	char			***tabtetri;
 	char			***tab;
-	int				l_square;
+	char			**finaltab;
+	int				square;
 }					t_tool;
 
 void			ft_error(void);
@@ -79,6 +81,10 @@ void			ft_search_X_MIN(t_tool *data);
 void			ft_search_X_MAX(t_tool *data);
 
 void			ft_reduce_tetri(t_tool *data);
+
+void			ft_putpieces(t_tool *data);
+
+int			ft_verif_put(t_tool *data);
 
 /*
 * a supprimer quant le programme sera completement operationnel.

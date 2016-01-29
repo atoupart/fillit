@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/15 11:55:04 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/28 17:46:56 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/01/29 17:56:32 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void		ft_openfile_checker(char *str, t_tool *data)
 	K = NBTETRI * 4;
 	while(I * I < K)
 		I++;
-	L_SQUARE = I;
+	SQUARE = I;
 }
