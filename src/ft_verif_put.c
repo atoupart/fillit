@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 13:07:25 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/29 18:49:09 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/01 17:56:01 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 int			ft_verif_put(t_tool *data)
 {
-	if (!(FINALTAB = (char**)ft_memalloc(sizeof(char) * SQUARE)))
+	K = 0;
+	while (TAB[I][K])
 	{
-		pts("malloc Finaltab");
-		ft_error();
+		J  = 0;
+		while (TAB[I][K][J])
+		{
+			if (FINALTAB[Y + K][X + J] == '#')
+				return (0);
+			J++;
+		}
+		K++;
 	}
-	if (FINALTAB[Y][X] == '#')
-		return (0);
+
 	return (0);
 }

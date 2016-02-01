@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 13:03:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/29 14:27:23 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/01 19:36:16 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void		ft_resolution_tetri(t_tool *data)
 	ft_search_X_MAX(data);
 	ft_reduce_tetri(data);
 	I = 0;
-	ft_putpieces(I, data);
+	ft_putpieces(data);
 }

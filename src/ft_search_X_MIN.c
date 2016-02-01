@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpieces.c                                     :+:      :+:    :+:   */
+/*   ft_search_X_MIN.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/29 13:05:40 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/01 17:56:03 by atoupart         ###   ########.fr       */
+/*   Created: 2016/01/26 12:31:22 by atoupart          #+#    #+#             */
+/*   Updated: 2016/01/27 15:40:20 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "fillit.h"
 
-void		ft_putpieces(t_tool *data)
+void		ft_search_X_MIN(t_tool *data)
 {
-	if (!(FINALTAB = (char**)ft_memalloc(sizeof(char) * SQUARE)))
-	{
-		pts("malloc Finaltab");
-		ft_error();
-	}
-	Y = -1;
-	while (++Y < SQUARE)
+	I = -1;
+	while (++I < NBTETRI)
 	{
 		X = -1;
-		while (++X < SQUARE)
+		while (++X < 4)
 		{
-			if (ft_verif_put(data))
+			Y = -1;
+			while (++Y < 4)
 			{
-				I++;
-				ft_putpieces(data);
+				if (TABTETRI[I][Y][X] == '#')
+				{
+					X_MIN[I] = X;
+					Y = 5;
+					break;
+				}
 			}
+			if (Y == 5)
+				break;
 		}
 	}
 }

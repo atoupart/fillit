@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 15:28:09 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/28 15:05:24 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/01 19:35:14 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void		ft_reduce_tetri(t_tool *data)
 		ft_error();
 	while (++I < NBTETRI)
 	{
-		if (!(TAB[I] = (char**)ft_memalloc(sizeof(char*) * Y_MAX[I] + 9)))
+		if (!(TAB[I] = (char**)ft_memalloc(sizeof(char*) * (Y_MAX[I] - Y_MIN[I] + 2))))
 			ft_error();
 		Y = 0;
 		K = Y_MIN[I];
 		while (K <= Y_MAX[I])
 		{
-			if (!(TAB[I][Y] = (char*)ft_memalloc(sizeof(char) * X_MAX[I])))
+			if (!(TAB[I][Y] = (char*)ft_memalloc(sizeof(char) * (X_MAX[I] - X_MIN[I] + 2))))
 				ft_error();
 			X = 0;
 			J = X_MIN[I];
