@@ -52,44 +52,36 @@ typedef struct		s_tool
 	int				k;
 	int				j;
 	int				nbtetri;
-	char			***tabtetri;
-	char			***tab;
-	char			**finaltab;
-	int				square;
+	char			***tabtetri; // fichier de base pour les tetri
+	char			***tab; // tab avec les tetri réduits
+	char			**finaltab; // résultat final
+	int				square; // taille du carré (taille mini puis augmente)
 }					t_tool;
 
-void			ft_error(void);
-
-void			ft_openfile_checker(char *str, t_tool *data);
-
-void			ft_checkform(char *buf, int ret, t_tool *data);
-
-void			ft_checktab(char **tab, t_tool *data);
-
-void			ft_transfert_tab_tetri(char **tab, t_tool *data);
-
-void			ft_checktetri(t_tool *data);
-
-void			ft_resolution_tetri(t_tool *data);
-
-void			ft_search_Y_MIN(t_tool *data);
-
-void			ft_search_Y_MAX(t_tool *data);
-
-void			ft_search_X_MIN(t_tool *data);
-
-void			ft_search_X_MAX(t_tool *data);
-
-void			ft_reduce_tetri(t_tool *data);
-
-void			ft_putpieces(t_tool *data);
-
-int			ft_verif_put(t_tool *data);
+void				ft_error(void);
+void				ft_openfile_checker(char *str, t_tool *data);
+void				ft_checkform(char *buf, int ret, t_tool *data);
+void				ft_checktab(char **tab, t_tool *data);
+void				ft_transfert_tab_tetri(char **tab, t_tool *data);
+void				ft_checktetri(t_tool *data);
+void				ft_resolution_tetri(t_tool *data);
+void				ft_search_Y_MIN(t_tool *data);
+void				ft_search_Y_MAX(t_tool *data);
+void				ft_search_X_MIN(t_tool *data);
+void				ft_search_X_MAX(t_tool *data);
+void				ft_reduce_tetri(t_tool *data);
+int					recursive_try(t_tool *data);
+int					ft_verif_put(t_tool *data);
+int					put_piece(t_tool *data);
+void				print_solution(t_tool *data);
+void				retire_piece(t_tool *data);
+void				init_square(t_tool *data);
+void				free_square(t_tool *data);
 
 /*
 * a supprimer quant le programme sera completement operationnel.
 */
-void			printtab2(char **tab);
-void			printtab3(t_tool *data);
+void				printtab2(char **tab);
+void				printtab3(t_tool *data);
 
 #endif

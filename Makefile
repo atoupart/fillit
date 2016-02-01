@@ -30,9 +30,14 @@ FILES	= main.c\
 		ft_search_X_MIN.c\
 		ft_search_X_MAX.c\
 		ft_reduce_tetri.c\
-		ft_putpieces.c\
+		recursive_try.c\
 		ft_verif_put.c\
+		put_piece.c\
 		printtab2.c\
+		print_solution.c\
+		retire_piece.c\
+		init_square.c\
+		free_square.c\
 		printtab3.c
 SRC		= $(addprefix src/, $(FILES))
 OBJ		= $(SRC:src/%.c=.obj/%.o)

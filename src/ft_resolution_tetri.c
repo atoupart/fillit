@@ -27,6 +27,10 @@ void		ft_resolution_tetri(t_tool *data)
 	ft_search_X_MIN(data);
 	ft_search_X_MAX(data);
 	ft_reduce_tetri(data);
-	I = 0;
-	ft_putpieces(data);
+
+	init_square(data);
+	recursive_try(data);
+	pts("\n\n######################################\nFINAL SOLUTION\n######################################\n");
+	print_solution(data);
+
 }

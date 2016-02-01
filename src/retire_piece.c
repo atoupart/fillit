@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpieces.c                                     :+:      :+:    :+:   */
+/*   retire_piece.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/29 13:05:40 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/01 17:56:03 by atoupart         ###   ########.fr       */
+/*   Created: 2016/05/31 21:05:57 by ebaudet           #+#    #+#             */
+/*   Updated: 2016/01/28 15:34:18 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		ft_putpieces(t_tool *data)
+void	retire_piece(t_tool *data)
 {
-	if (!(FINALTAB = (char**)ft_memalloc(sizeof(char) * SQUARE)))
+	K = -1;
+	while (TAB[I][++K])
 	{
-		pts("malloc Finaltab");
-		ft_error();
-	}
-	Y = -1;
-	while (++Y < SQUARE)
-	{
-		X = -1;
-		while (++X < SQUARE)
+		J = -1;
+		while (TAB[I][K][++J] && (K + Y < SQUARE)  && (J + X < SQUARE))
 		{
-			if (ft_verif_put(data))
-			{
-				I++;
-				ft_putpieces(data);
-			}
+			if (TAB[I][K][J] == '#')
+				FINALTAB[Y + K][X + J] = '\0';
 		}
 	}
 }
