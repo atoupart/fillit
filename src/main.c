@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:13:24 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/01 19:18:49 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 14:31:40 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int argc, char **argv)
 	ft_openfile_checker(argv[1], data);
 	ft_resolution_tetri(data);
 	printtab3(data);
-	pts("Taille du plus petit carre : ");
+	pts("Taille du carre final : ");
 	ptn(SQUARE);
 	return (0);
 }

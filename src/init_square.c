@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 21:05:57 by ebaudet           #+#    #+#             */
-/*   Updated: 2016/01/28 15:34:18 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:25:10 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	init_square(t_tool *data)
 {
-	int		x;
-	
 	I = 0;
 	if (!(FINALTAB = (char**)ft_memalloc(sizeof(char*) * (SQUARE + 1))))
 		ft_error();
-	x = -1;
-	while (++x < SQUARE)
+	X = -1;
+	while (++X < SQUARE)
 	{
-		if (!(FINALTAB[x] = (char*)ft_memalloc(sizeof(char) * (SQUARE + 1))))
+		if (!(FINALTAB[X] = (char*)ft_memalloc(sizeof(char) * (SQUARE + 1))))
 			ft_error();
 	}
 }

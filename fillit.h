@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/01 17:56:07 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 18:12:24 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-# define BUF_SIZE 545
+# define BUF_SIZE 546
 # define X data->x
 # define Y data->y
 # define I data->i

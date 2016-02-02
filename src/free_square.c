@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 21:05:57 by ebaudet           #+#    #+#             */
-/*   Updated: 2016/01/28 15:34:18 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:33:34 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	free_square(t_tool *data)
 {
-	int		x;
 
-	x = -1;
-	while (++x < SQUARE)
+	X = -1;
+	while (++X < SQUARE)
 	{
-		free(FINALTAB[x]);
+		free(FINALTAB[X]);
 	}
 	free(FINALTAB);
 }

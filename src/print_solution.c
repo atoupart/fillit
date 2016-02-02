@@ -6,7 +6,7 @@
 /*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 21:05:57 by ebaudet           #+#    #+#             */
-/*   Updated: 2016/01/28 15:34:18 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 14:48:21 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 void	print_solution(t_tool *data)
 {
-	int		x;
-	int		y;
-
-	y = -1;
-	while (++y < SQUARE)
+	Y = -1;
+	while (++Y < SQUARE)
 	{
-		x = -1;
-		while (++x < SQUARE)
+		X = -1;
+		while (++X < SQUARE)
 		{
-			if (FINALTAB[y][x] == '\0')
+			if (FINALTAB[Y][X] == '\0')
 				ft_putchar(' ');
 			else
-				ft_putchar(FINALTAB[y][x]);
+				ft_putchar(FINALTAB[Y][X]);
 			ft_putchar(' ');
 		}
 		ft_putchar('\n');

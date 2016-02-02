@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 13:07:25 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/01 17:56:01 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 15:39:14 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int			ft_verif_put(t_tool *data)
 		J = -1;
 		while (TAB[I][K][++J] && (J + X < SQUARE))
 		{
-			if (TAB[I][K][J] == '#') {
+			if (TAB[I][K][J] == '#')
+			{
 				nb_diese++;
 				if (FINALTAB[Y + K][X + J] != '\0')
 					return (0);

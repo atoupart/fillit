@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 13:05:40 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/01 17:56:03 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/02 17:32:42 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int		recursive_try(t_tool *data)
 			}
 		}
 	}
-	if (I == 0) {
+	if (I == 0)
+	{
 		SQUARE += 1;
 		free_square(data);
 		init_square(data);
