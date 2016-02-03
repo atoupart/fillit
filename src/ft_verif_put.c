@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 13:07:25 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/02 15:39:14 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/03 16:55:28 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,26 @@
  * Si c'est ok,    retourne 1.
  * Si ne peut pas, retourne 0
  */
-int			ft_verif_put(t_tool *data)
+int			ft_verif_put(int y, int x, t_tool *data)
 {
 	int		nb_diese;
 
 	nb_diese = 0;
 	K = -1;
-	while (TAB[I][++K] && (K + Y < SQUARE))
+	while (TAB[I][++K] && (K + y < SQUARE))
 	{
 		J = -1;
-		while (TAB[I][K][++J] && (J + X < SQUARE))
+		while (TAB[I][K][++J] && (J + x < SQUARE))
 		{
 			if (TAB[I][K][J] == '#')
 			{
 				nb_diese++;
-				if (FINALTAB[Y + K][X + J] != '\0')
+				if (FINALTAB[y + K][x + J] != '\0')
 					return (0);
 			}
 		}
 	}
-	if (nb_diese != 4 && (((K + Y) >= SQUARE) || ((J + X) >= SQUARE)))
+	if (nb_diese != 4 && (((K + y) >= SQUARE) || ((J + x) >= SQUARE)))
 		return (0);
-	return (put_piece(data));
+	return (put_piece(y, x, data));
 }
