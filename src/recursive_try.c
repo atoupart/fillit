@@ -19,31 +19,27 @@
  */
 int		recursive_try(t_tool *data)
 {
+	int x;
+	int y;
 	ptn(1);pts("  ################   Debut recursive  I = ");ptn(I);ptcn;
 	if (I == NBTETRI)
 	{
 		ptn(2);pts("I == NBTETRI, return (1)");ptcn;
 		return (1);
 	}
-	Y = -1;
-	while (++Y < SQUARE)
+	y = -1;
+	while (++y < SQUARE)
 	{
-		ptn(3);pts("  ++Y  :  ");ptn(Y);ptcn;
-		X = -1;
-		while (++X < SQUARE)
+		ptn(3);pts("  ++y  :  ");ptn(y);ptcn;
+		x = -1;
+		while (++x < SQUARE)
 		{
-			ptn(4);pts("  ++X  :  ");ptn(X);ptcn;
-			if (ft_verif_put(data) == 1)
+			ptn(4);pts("  ++x  :  ");ptn(x);ptcn;
+			if (ft_verif_put(data, y, x) == 1)
 			{
 				I++;
 				ptn(5);pts("  verif & put ok, I++  :  ");ptn(I);ptcn;
-				if (recursive_try(data) == 0)
-				{
-					retire_piece(data);
-					I--;
-					ptn(6);pts("  recursive == 0, retire piece et I--");ptcn;
-				}
-				else
+				if (recursive_try(data) == 1)
 				{
 					ptn(7);pts("  recursive != 0, return (1)");ptcn;
 					return (1);
@@ -51,15 +47,24 @@ int		recursive_try(t_tool *data)
 			}
 		}
 	}
-	if (I == 0)
+	I--;
+	print_solution(data);
+	ptn(11);pts("  on retire la piece [");ptn(I);pts("]");ptcn;
+
+	retire_piece(data);
+	print_solution(data);
+	
+	if (I == -1)
 	{
 		ptn(8);pts("  I == 0, square++ free init et recursive");ptcn;
 		SQUARE += 1;
 		free_square(data);
 		init_square(data);
+		I = 0;
 		recursive_try(data);
+
 	}
-	ptn(9);pts("  I != 0, return (0)");ptcn;
+	ptn(9);pts("  I = ");ptn(I);pts("on contitinue sur le parent");ptcn;
 	return (0);
 }
 

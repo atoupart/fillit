@@ -71,10 +71,12 @@ void				ft_search_X_MIN(t_tool *data);
 void				ft_search_X_MAX(t_tool *data);
 void				ft_reduce_tetri(t_tool *data);
 int					recursive_try(t_tool *data);
-int					ft_verif_put(int y, int x, t_tool *data);
-int					put_piece(int y, int x, t_tool *data);
+int			ft_verif_put(t_tool *data, int y, int x);
+// int					ft_verif_put(int y, int x, t_tool *data);
+int		put_piece(t_tool *data, int y, int x);
+// int					put_piece(int y, int x, t_tool *data);
 void				print_solution(t_tool *data);
-void				retire_piece(int y, int x,t_tool *data);
+void				retire_piece(t_tool *data);
 void				init_square(t_tool *data);
 void				free_square(t_tool *data);
 

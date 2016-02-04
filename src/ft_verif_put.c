@@ -17,7 +17,7 @@
  * Si c'est ok,    retourne 1.
  * Si ne peut pas, retourne 0
  */
-int			ft_verif_put(int y, int x, t_tool *data)
+int			ft_verif_put(t_tool *data, int y, int x)
 {
 	int		nb_diese;
 
@@ -38,5 +38,5 @@ int			ft_verif_put(int y, int x, t_tool *data)
 	}
 	if (nb_diese != 4 && (((K + y) >= SQUARE) || ((J + x) >= SQUARE)))
 		return (0);
-	return (put_piece(y, x, data));
+	return (put_piece(data, y, x));
 }

@@ -16,7 +16,7 @@
  * Pose la piece
  * retourne 1
  */
-int		put_piece(t_tool *data)
+int		put_piece(t_tool *data, int y, int x)
 {
 	K = -1;
 	while (TAB[I][++K])
@@ -25,7 +25,7 @@ int		put_piece(t_tool *data)
 		while (TAB[I][K][++J])// && (K + Y < SQUARE) && (J + X < SQUARE))
 		{
 			if (TAB[I][K][J] == '#')
-				FINALTAB[Y + K][X + J] = 'A' + I;
+				FINALTAB[y + K][x + J] = 'A' + I;
 		}
 	}
 

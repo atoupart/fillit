@@ -15,13 +15,13 @@
 void	retire_piece(t_tool *data)
 {
 	K = -1;
-	while (TAB[I][++K])
+	while (++K < SQUARE)
 	{
 		J = -1;
-		while (TAB[I][K][++J] && (K + Y < SQUARE)  && (J + X < SQUARE))
+		while (++J < SQUARE)
 		{
-			if (TAB[I][K][J] == '#')
-				FINALTAB[Y + K][X + J] = '\0';
+			if (FINALTAB[K][J] == ('A' + I))
+				FINALTAB[K][J] = '\0';
 		}
 	}
 }
