@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emilien <emilien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/03 16:55:26 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 02:23:44 by emilien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,8 @@ void				ft_search_X_MIN(t_tool *data);
 void				ft_search_X_MAX(t_tool *data);
 void				ft_reduce_tetri(t_tool *data);
 int					recursive_try(t_tool *data);
-int			ft_verif_put(t_tool *data, int y, int x);
-// int					ft_verif_put(int y, int x, t_tool *data);
-int		put_piece(t_tool *data, int y, int x);
-// int					put_piece(int y, int x, t_tool *data);
+int					ft_verif_put(t_tool *data, int y, int x);
+int					put_piece(t_tool *data, int y, int x);
 void				print_solution(t_tool *data);
 void				retire_piece(t_tool *data);
 void				init_square(t_tool *data);
