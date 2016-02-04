@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_Y_MAX.c                                  :+:      :+:    :+:   */
+/*   ft_search_y_max.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 12:34:48 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/26 15:05:10 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 18:35:01 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		ft_search_Y_MAX(t_tool *data)
+void		ft_search_y_max(t_tool *data)
 {
 	I = -1;
 	while (++I < NBTETRI)
@@ -27,11 +27,11 @@ void		ft_search_Y_MAX(t_tool *data)
 				{
 					Y_MAX[I] = Y;
 					Y = 5;
-					break;
+					break ;
 				}
 			}
 			if (Y == 5)
-				break;
+				break ;
 		}
 	}
 }

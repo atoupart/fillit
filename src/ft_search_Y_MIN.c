@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_Y_MIN.c                                      :+:      :+:    :+:   */
+/*   ft_search_y_min.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 12:04:26 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/27 15:41:34 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 18:35:11 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		ft_search_Y_MIN(t_tool *data)
+void		ft_search_y_min(t_tool *data)
 {
 	I = -1;
 	while (++I < NBTETRI)
@@ -27,11 +27,11 @@ void		ft_search_Y_MIN(t_tool *data)
 				{
 					Y_MIN[I] = Y;
 					Y = 5;
-					break;
+					break ;
 				}
 			}
 			if (Y == 5)
-				break;
+				break ;
 		}
 	}
 }

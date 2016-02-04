@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 13:03:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/02 15:25:28 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 18:00:45 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,13 @@ void		ft_resolution_tetri(t_tool *data)
 	|| !(X_MAX = (int*)ft_memalloc(sizeof(int) * NBTETRI))
 	|| !(Y_MIN = (int*)ft_memalloc(sizeof(int) * NBTETRI))
 	|| !(X_MIN = (int*)ft_memalloc(sizeof(int) * NBTETRI)))
-	{
-		pts("mallocXY");
 		ft_error();
-	}
-	ft_search_Y_MIN(data);
-	ft_search_Y_MAX(data);
-	ft_search_X_MIN(data);
-	ft_search_X_MAX(data);
+	ft_search_y_min(data);
+	ft_search_y_max(data);
+	ft_search_x_min(data);
+	ft_search_x_max(data);
 	ft_reduce_tetri(data);
-
 	init_square(data);
 	recursive_try(data);
-	pts("\n\n######################################\nFINAL SOLUTION\n######################################\n");
 	print_solution(data);
-
 }

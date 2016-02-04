@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 16:07:54 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/21 19:31:41 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 17:45:30 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,11 @@ void		ft_checktab(char **tab, t_tool *data)
 		if ((Y + 1) % 4 == 0)
 		{
 			if (I != 4)
-			{
-				ft_putstr("NBdiese");
 				ft_error();
-			}
 			else
 				I = 0;
 		}
 	}
 	if (Y % 4 != 0 || Y == 0)
-	{
-		ft_putstr("NBline");
 		ft_error();
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/22 12:53:43 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/28 10:25:04 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 18:44:36 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void		ft_checktetri(t_tool *data)
 {
-	I = -1;
 	while (++I < NBTETRI)
 	{
 		Y = -1;
@@ -38,9 +37,6 @@ void		ft_checktetri(t_tool *data)
 			}
 		}
 		if (K < 6)
-		{
-			pts("formtetri");
 			ft_error();
-		}
 	}
 }

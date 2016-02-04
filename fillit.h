@@ -6,7 +6,7 @@
 /*   By: emilien <emilien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 17:28:17 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/04 02:23:44 by emilien          ###   ########.fr       */
+/*   Updated: 2016/02/04 18:00:22 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@
 # define FINALTAB data->finaltab
 # define SQUARE data->square
 
-# define pts ft_putstr
-# define ptn ft_putnbr
-# define ptc ft_putchar
-# define ptcn ft_putchar('\n');
-
-
 typedef struct		s_tool
 {
 	int				*x_max;
@@ -52,10 +46,10 @@ typedef struct		s_tool
 	int				k;
 	int				j;
 	int				nbtetri;
-	char			***tabtetri; // fichier de base pour les tetri
-	char			***tab; // tab avec les tetri réduits
-	char			**finaltab; // résultat final
-	int				square; // taille du carré (taille mini puis augmente)
+	char			***tabtetri;
+	char			***tab;
+	char			**finaltab;
+	int				square;
 }					t_tool;
 
 void				ft_error(void);
@@ -65,10 +59,10 @@ void				ft_checktab(char **tab, t_tool *data);
 void				ft_transfert_tab_tetri(char **tab, t_tool *data);
 void				ft_checktetri(t_tool *data);
 void				ft_resolution_tetri(t_tool *data);
-void				ft_search_Y_MIN(t_tool *data);
-void				ft_search_Y_MAX(t_tool *data);
-void				ft_search_X_MIN(t_tool *data);
-void				ft_search_X_MAX(t_tool *data);
+void				ft_search_y_min(t_tool *data);
+void				ft_search_y_max(t_tool *data);
+void				ft_search_x_min(t_tool *data);
+void				ft_search_x_max(t_tool *data);
 void				ft_reduce_tetri(t_tool *data);
 int					recursive_try(t_tool *data);
 int					ft_verif_put(t_tool *data, int y, int x);
@@ -77,11 +71,5 @@ void				print_solution(t_tool *data);
 void				retire_piece(t_tool *data);
 void				init_square(t_tool *data);
 void				free_square(t_tool *data);
-
-/*
-* a supprimer quant le programme sera completement operationnel.
-*/
-void				printtab2(char **tab);
-void				printtab3(t_tool *data);
 
 #endif

@@ -6,17 +6,12 @@
 /*   By: emilien <emilien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 13:07:25 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/04 02:21:54 by emilien          ###   ########.fr       */
+/*   Updated: 2016/02/04 17:51:59 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-/*
- * Essaye de poser une pièce à l'emplacement.
- * Si c'est ok,    retourne 1.
- * Si ne peut pas, retourne 0
- */
 int			ft_verif_put(t_tool *data, int y, int x)
 {
 	int		nb_diese;

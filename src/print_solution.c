@@ -6,7 +6,7 @@
 /*   By: emilien <emilien@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/31 21:05:57 by ebaudet           #+#    #+#             */
-/*   Updated: 2016/02/04 02:22:35 by emilien          ###   ########.fr       */
+/*   Updated: 2016/02/04 18:35:26 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void	print_solution(t_tool *data)
 		X = -1;
 		while (++X < SQUARE)
 		{
-			if (FINALTAB[Y][X] == '\0')
-				ft_putchar(' ');
-			else
-				ft_putchar(FINALTAB[Y][X]);
-			ft_putchar(' ');
+			ft_putchar(FINALTAB[Y][X]);
 		}
 		ft_putchar('\n');
 	}

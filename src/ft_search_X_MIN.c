@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_X_MIN.c                                  :+:      :+:    :+:   */
+/*   ft_search_x_min.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 12:31:22 by atoupart          #+#    #+#             */
-/*   Updated: 2016/01/27 15:40:20 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/02/04 18:34:51 by atoupart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "fillit.h"
 
-void		ft_search_X_MIN(t_tool *data)
+void		ft_search_x_min(t_tool *data)
 {
 	I = -1;
 	while (++I < NBTETRI)
@@ -28,11 +27,11 @@ void		ft_search_X_MIN(t_tool *data)
 				{
 					X_MIN[I] = X;
 					Y = 5;
-					break;
+					break ;
 				}
 			}
 			if (Y == 5)
-				break;
+				break ;
 		}
 	}
 }

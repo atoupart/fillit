@@ -6,7 +6,7 @@
 #    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/29 13:38:45 by atoupart         ###   ########.fr        #
+#    Updated: 2016/02/04 17:58:10 by atoupart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,20 +25,18 @@ FILES	= main.c\
 		ft_transfert_tab_tetri.c\
 		ft_checktetri.c\
 		ft_resolution_tetri.c\
-		ft_search_Y_MIN.c\
-		ft_search_Y_MAX.c\
-		ft_search_X_MIN.c\
-		ft_search_X_MAX.c\
+		ft_search_y_min.c\
+		ft_search_y_max.c\
+		ft_search_x_min.c\
+		ft_search_x_max.c\
 		ft_reduce_tetri.c\
 		recursive_try.c\
 		ft_verif_put.c\
 		put_piece.c\
-		printtab2.c\
 		print_solution.c\
 		retire_piece.c\
 		init_square.c\
-		free_square.c\
-		printtab3.c
+		free_square.c
 SRC		= $(addprefix src/, $(FILES))
 OBJ		= $(SRC:src/%.c=.obj/%.o)
 
