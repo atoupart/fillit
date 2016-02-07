@@ -16,19 +16,19 @@ void		ft_reduce_tetri(t_tool *data)
 {
 	I = -1;
 	if (!(TAB = (char***)ft_memalloc(sizeof(char**) * NBTETRI)))
-		ft_error();
+		ft_error(data);
 	while (++I < NBTETRI)
 	{
 		if (!(TAB[I] = (char**)ft_memalloc(sizeof(char*) *
 						(Y_MAX[I] - Y_MIN[I] + 2))))
-			ft_error();
+			ft_error(data);
 		Y = 0;
 		K = Y_MIN[I];
 		while (K <= Y_MAX[I])
 		{
 			if (!(TAB[I][Y] = (char*)ft_memalloc(sizeof(char) *
 							(X_MAX[I] - X_MIN[I] + 2))))
-				ft_error();
+				ft_error(data);
 			X = 0;
 			J = X_MIN[I];
 			while (J <= X_MAX[I])

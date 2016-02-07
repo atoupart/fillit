@@ -36,6 +36,7 @@ FILES	= main.c\
 		print_solution.c\
 		retire_piece.c\
 		init_square.c\
+		ft_free_data.c\
 		free_square.c
 SRC		= $(addprefix src/, $(FILES))
 OBJ		= $(SRC:src/%.c=.obj/%.o)

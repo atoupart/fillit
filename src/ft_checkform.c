@@ -15,7 +15,7 @@
 void		ft_checkform(char *buf, int ret, t_tool *data)
 {
 	if (!(buf[ret - 2] == '.' || buf[ret - 2] == '#') || buf[ret - 1] != '\n')
-		ft_error();
+		ft_error(data);
 	while (buf[++X])
 	{
 		if (X == 0 && (buf[X] == '#' || buf[X] == '.'))
@@ -23,7 +23,7 @@ void		ft_checkform(char *buf, int ret, t_tool *data)
 		else if (((X - NBTETRI) % 20) == 0)
 		{
 			if (buf[X] != '\n' && I == 1)
-				ft_error();
+				ft_error(data);
 			if (I == 1)
 				NBTETRI++;
 			I = -I;
@@ -31,12 +31,12 @@ void		ft_checkform(char *buf, int ret, t_tool *data)
 		else if ((X + 1 - NBTETRI) % 5 == 0)
 		{
 			if (buf[X] != '\n')
-				ft_error();
+				ft_error(data);
 		}
 		else if (buf[X] != '#' && buf[X] != '.')
-			ft_error();
+			ft_error(data);
 	}
 	NBTETRI++;
 	if (NBTETRI > 26 || NBTETRI <= 0)
-		ft_error();
+		ft_error(data);
 }

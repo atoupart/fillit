@@ -29,14 +29,14 @@ void			ft_openfile_checker(char *str, t_tool *data)
 	char	**tab;
 
 	if ((fd = open(str, O_RDONLY)) == -1)
-		ft_error();
+		ft_error(data);
 	if ((ret = read(fd, buf, BUF_SIZE)) == BUF_SIZE)
-		ft_error();
+		ft_error(data);
 	if (close(fd) == -1)
-		ft_error();
+		ft_error(data);
 	buf[ret] = '\0';
 	if (buf[0] != '#' && buf[0] != '.')
-		ft_error();
+		ft_error(data);
 	X = -1;
 	I = 1;
 	NBTETRI = 0;

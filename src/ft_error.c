@@ -12,8 +12,9 @@
 
 #include "fillit.h"
 
-void	ft_error(void)
+void	ft_error(t_tool *data)
 {
+	ft_free_data(data);
 	ft_putstr("error");
 	ft_putchar('\n');
 	exit(EXIT_FAILURE);

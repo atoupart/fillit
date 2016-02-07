@@ -17,10 +17,11 @@ int		main(int argc, char **argv)
 	t_tool	*data;
 
 	if (!(data = (t_tool*)ft_memalloc(sizeof(t_tool))))
-		ft_error();
+		ft_error(data);
 	if (argc != 2)
-		ft_error();
+		ft_error(data);
 	ft_openfile_checker(argv[1], data);
 	ft_resolution_tetri(data);
+	ft_free_data(data);
 	return (0);
 }

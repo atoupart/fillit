@@ -37,6 +37,6 @@ void		ft_checktetri(t_tool *data)
 			}
 		}
 		if (K < 6)
-			ft_error();
+			ft_error(data);
 	}
 }

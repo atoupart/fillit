@@ -25,11 +25,11 @@ void		ft_checktab(char **tab, t_tool *data)
 		if ((Y + 1) % 4 == 0)
 		{
 			if (I != 4)
-				ft_error();
+				ft_error(data);
 			else
 				I = 0;
 		}
 	}
 	if (Y % 4 != 0 || Y == 0)
-		ft_error();
+		ft_error(data);
 }

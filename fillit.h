@@ -52,15 +52,15 @@ typedef struct		s_tool
 	int				square;
 }					t_tool;
 
-void				ft_error(void);
+void				ft_error(t_tool *data);
 void				ft_openfile_checker(char *str, t_tool *data);
 void				ft_checkform(char *buf, int ret, t_tool *data);
 void				ft_checktab(char **tab, t_tool *data);
 void				ft_transfert_tab_tetri(char **tab, t_tool *data);
 void				ft_checktetri(t_tool *data);
 void				ft_resolution_tetri(t_tool *data);
-void				ft_search_y_min(t_tool *data);
 void				ft_search_y_max(t_tool *data);
+void				ft_search_y_min(t_tool *data);
 void				ft_search_x_min(t_tool *data);
 void				ft_search_x_max(t_tool *data);
 void				ft_reduce_tetri(t_tool *data);
@@ -71,5 +71,6 @@ void				print_solution(t_tool *data);
 void				retire_piece(t_tool *data);
 void				init_square(t_tool *data);
 void				free_square(t_tool *data);
+void				ft_free_data(t_tool *data);
 
 #endif

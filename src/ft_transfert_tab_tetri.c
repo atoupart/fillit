@@ -17,16 +17,16 @@ void		ft_transfert_tab_tetri(char **tab, t_tool *data)
 	I = -1;
 	K = -1;
 	if (!(TABTETRI = (char***)ft_memalloc(sizeof(char**) * NBTETRI + 1)))
-		ft_error();
+		ft_error(data);
 	while (++I < NBTETRI)
 	{
 		if (!(TABTETRI[I] = (char**)ft_memalloc(sizeof(char*) * 5)))
-			ft_error();
+			ft_error(data);
 		Y = -1;
 		while (++Y < 4)
 		{
 			if (!(TABTETRI[I][Y] = (char*)ft_memalloc(sizeof(char) * 5)))
-				ft_error();
+				ft_error(data);
 			K++;
 			X = -1;
 			J = -1;
