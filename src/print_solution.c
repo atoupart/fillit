@@ -20,7 +20,10 @@ void	print_solution(t_tool *data)
 		X = -1;
 		while (++X < SQUARE)
 		{
-			ft_putchar(FINALTAB[Y][X]);
+			if (!FINALTAB[Y][X])
+				ft_putchar('.');
+			else
+				ft_putchar(FINALTAB[Y][X]);
 		}
 		ft_putchar('\n');
 	}
