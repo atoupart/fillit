@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reduce_tetri.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atoupart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 15:28:09 by atoupart          #+#    #+#             */
-/*   Updated: 2016/02/04 18:34:09 by atoupart         ###   ########.fr       */
+/*   Updated: 2016/03/14 19:52:00 by ebaudet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ft_reduce_tetri(t_tool *data)
 {
 	I = -1;
-	if (!(TAB = (char***)ft_memalloc(sizeof(char**) * NBTETRI)))
+	if (!(TAB = (char***)ft_memalloc(sizeof(char**) * NBTETRI + 1)))
 		ft_error(data);
 	while (++I < NBTETRI)
 	{
