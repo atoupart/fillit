@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/01/15 10:53:16 by atoupart         ###   ########.fr        #
+#    Updated: 2016/03/14 19:19:55 by ebaudet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,21 +84,18 @@ FTO		= $(FTC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		@echo ""
-		@ar rc $(NAME) $(OBJ)
-		@ranlib $(NAME)
-		@echo "création de $(NAME)"
+		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
 
 .obj/%.o: %.c
-	@mkdir -p .obj
-	@$(CC) -c $< -o $@ $(CFLAGS) -I $(INC)
-	@printf .
+		mkdir -p .obj
+		$(CC) -c $< -o $@ $(CFLAGS) -I $(INC)
 
 clean:
-		@$(RM) .obj
+		$(RM) .obj
 
 fclean: clean
-		@$(RM) $(NAME)
+		$(RM) $(NAME)
 
 re: fclean all
 

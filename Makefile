@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: atoupart <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: ebaudet <ebaudet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 10:08:38 by atoupart          #+#    #+#              #
-#    Updated: 2016/02/04 17:58:10 by atoupart         ###   ########.fr        #
+#    Updated: 2016/03/14 19:21:07 by ebaudet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,25 +47,24 @@ LIB		= -L libft -lft
 all: $(NAME)
 
 $(NAME): make_libft $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIB)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INC) $(LIB)
 
 .obj/%.o: src/%.c
-	@mkdir -p .obj
-	@$(CC) -c $< -o $@ $(CFLAGS) $(INC)
+	mkdir -p .obj
+	$(CC) -c $< -o $@ $(CFLAGS) $(INC)
 
 make_libft:
-	@echo "Compilation de la libft :"
-	@make -C libft
+	make -C libft
 
 clean:
-	@$(RM) .obj
+	$(RM) .obj
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
 lldb:
-	@cc $(CFLAGS) $(SRC) -o $(NAME) $(INC) $(LIB)
+	cc $(CFLAGS) $(SRC) -o $(NAME) $(INC) $(LIB)
 
 .PHONY: all clean fclean re lldb
